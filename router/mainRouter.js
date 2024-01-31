@@ -9,4 +9,8 @@ router.get('/notes', (req, res) => {
 
 router.use('/api', apiRouter);
 
+router.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'))
+});
+
 module.exports = router;
